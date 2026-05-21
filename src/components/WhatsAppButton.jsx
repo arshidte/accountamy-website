@@ -3,8 +3,8 @@ import { useState } from "react";
 const WhatsAppButton = () => {
   const [hover, setHover] = useState(false);
 
-  // Using a placeholder number. The user can update it with their real WhatsApp number.
-  const whatsappNumber = "1234567890";
+  // WhatsApp number for Accountamy
+  const whatsappNumber = "917994833515"; // +91 7994833515
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   return (

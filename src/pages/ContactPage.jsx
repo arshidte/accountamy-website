@@ -224,9 +224,8 @@ const ContactPage = ({ screen }) => {
 
               <div style={{ marginTop: 40, display: "flex", flexDirection: "column", gap: 20 }}>
                 {[
-                  { icon: "🌐", label: "Website", value: "accountamy.com" },
-                  { icon: "📧", label: "Email", value: "info@accountamy.com" },
-                  { icon: "📞", label: "Admissions", value: "Call for details" },
+                  { icon: "📧", label: "Email", value: "info@accountamy.com", link: "mailto:info@accountamy.com" },
+                  { icon: "📞", label: "Admissions", value: "+91 7994833515", link: "tel:+917994833515" },
                 ].map((c, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 14 }}>
                     <div
@@ -248,9 +247,20 @@ const ContactPage = ({ screen }) => {
                       <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", fontWeight: 600 }}>
                         {c.label}
                       </div>
-                      <div style={{ fontSize: 15, color: BRAND.white, fontWeight: 600 }}>
+                      <a
+                        href={c.link}
+                        style={{
+                          fontSize: 15,
+                          color: BRAND.white,
+                          fontWeight: 600,
+                          textDecoration: "none",
+                          transition: "color 0.2s ease",
+                        }}
+                        onMouseEnter={(e) => (e.target.style.color = BRAND.orange)}
+                        onMouseLeave={(e) => (e.target.style.color = BRAND.white)}
+                      >
                         {c.value}
-                      </div>
+                      </a>
                     </div>
                   </div>
                 ))}
